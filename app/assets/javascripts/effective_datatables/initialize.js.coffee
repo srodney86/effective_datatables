@@ -86,7 +86,7 @@ initializeDataTables = (target) ->
       scrollCollapse: true
       createdRow: (row, data, dataIndex) ->
         console.log(data[3])
-        if data[3] == '76'
+        if data[3] == 'Yes'
           $(row).addClass 'important'
       pagingType: 'simple_numbers'
       initComplete: (settings) ->
