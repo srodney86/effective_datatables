@@ -84,6 +84,10 @@ initializeDataTables = (target) ->
 
       serverSide: true
       scrollCollapse: true
+      createdRow: (row, data, dataIndex) ->
+        console.log(data[3])
+        if data[3] == '76'
+          $(row).addClass 'important'
       pagingType: 'simple_numbers'
       initComplete: (settings) ->
         initializeButtons(this.api())
