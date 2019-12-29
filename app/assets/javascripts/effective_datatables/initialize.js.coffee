@@ -46,6 +46,12 @@ initializeDataTables = (target) ->
       columns: datatable.data('columns')
       deferLoading: [datatable.data('display-records'), datatable.data('total-records')]
       deferRender: true
+      fixedHeader: true
+      createdRow: (row, data, dataIndex) ->
+        console.log(data[3])
+        console.log(data)
+        if data[3] == 'Yes'
+          $(row).addClass 'important'
       displayStart: datatable.data('display-start')
       iDisplayLength: datatable.data('display-length')
       language: datatable.data('language')
